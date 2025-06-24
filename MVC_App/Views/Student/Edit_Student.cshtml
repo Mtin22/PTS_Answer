@@ -1,0 +1,33 @@
+@model MVC_App.Models.Student
+@{
+    ViewData["Title"] = "Edit Student";
+}
+<br>
+<h1>Edit Student Information</h1>
+<br>
+
+<form asp-action="Edit_Student" method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="Id"/>
+    <div>
+        <label>Name</label>
+        <input asp-for="Name"/>
+    </div>
+    <br>
+    <div>
+        <label>Email</label>
+        <input asp-for="Email"/>
+    </div>
+    <br>
+    <div>
+        <label>Course</label>
+        <input asp-for="Course"/>
+    </div>
+    <br>
+    <div>
+        <label>Enrolment Date</label>
+        <input asp-for="EnrolmentDate" type="date"/>
+    </div>
+    <br> <br>
+    <button type="submit">Save Edit</button>
+</form>

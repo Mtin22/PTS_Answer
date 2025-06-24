@@ -1,0 +1,35 @@
+@model MVC_App.Models.Student
+
+@{
+    ViewData["Title"] = "Add Student";
+}
+<br>
+<h1>Add New Student</h1>
+<br>
+
+<form  method="post" asp-action="Add">
+    @Html.AntiForgeryToken()
+    <div>
+        <label for="name">Student Name</label>
+        <input asp-for="Name"/>
+    </div>
+    <br>
+    <div>
+        <label for="email">Student Email</label>
+        <input asp-for="Email"/>
+
+    </div>
+    <br>
+    <div>
+        <label for="course">Course</label>
+        <input asp-for="Course"/>
+
+    </div>
+    <br>
+    <div>
+        <label for="enrolmentDate">Enrolment Date</label>
+        <input asp-for="EnrolmentDate" type="date"/>
+    </div>
+    <br> <br>
+    <button type="submit"> Add Student </button>
+</Form>

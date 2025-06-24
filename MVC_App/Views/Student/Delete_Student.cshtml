@@ -1,0 +1,22 @@
+@model MVC_App.Models.Student
+
+@{
+    ViewData["Title"] = "Delete Student";
+}
+<br>
+<h1>Are you sure you want to delete this student?</h1>
+<br>
+
+<div>
+    <p>Name: @Model.Name<br></p>
+    <p>Email: @Model.Email<br> </p>
+    <p>Course: @Model.Course<br> </p>
+    <p>Enrolment Date: @Model.EnrolmentDate.ToShortDateString()</p>
+</div>
+
+<form asp-action="Delete" method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="Id" />
+    <button a asp-action="Students">Cancel Delete</a> </button>
+    <button type="submit">Confrim Delete</button>
+</form>
